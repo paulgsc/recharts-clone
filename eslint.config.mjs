@@ -8,6 +8,7 @@ import deprecationPlugin from 'eslint-plugin-deprecation';
 import jsonPlugin from 'eslint-plugin-json';
 import prettierPlugin from 'eslint-plugin-prettier';
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort';
+import { configs as eslintPluginStorybook } from 'eslint-plugin-storybook';
 import unicornPlugin from 'eslint-plugin-unicorn';
 import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
@@ -37,6 +38,7 @@ export default tseslint.config(
       '**/__snapshots__/**',
       '**/.docusaurus/**',
       '**/build/**',
+      '**/.storybook/**',
     ],
   },
   {
@@ -106,7 +108,10 @@ export default tseslint.config(
       'import/no-default-export': 'off',
     },
   },
-
+  {
+    files: ['**/*.stories.@(ts|tsx)'],
+    extends: [eslintPluginStorybook['flat/recommended']],
+  },
   {
     files: ['**/*.{ts,tsx,cts,mts}'],
     extends: [
