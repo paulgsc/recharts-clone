@@ -74,7 +74,7 @@
     "lint-staged": "^15.2.7",
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
-    "rimraf": "^5.0.7",
+    "rimraf": "^5.0.8",
     "storybook": "^8.1.11",
     "stylelint": "16.6.1",
     "stylelint-config-standard": "36.0.1",
